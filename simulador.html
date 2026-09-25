@@ -9,33 +9,53 @@
     <script src="simulador.js"></script>
   </head>
   <body>
+    <header class="encabezado">
+      <img src="logo.jpg" alt="Banco Pichincha" />
+      <span>Simulador de Crédito</span>
+    </header>
+
     <div class="container">
       <h1>Simulador de Crédito</h1>
+      <p class="subtitulo">Calcula tu capacidad de pago y las condiciones de tu préstamo.</p>
 
       <h2>Datos financieros</h2>
-      <label for="txtIngresos">Ingresos:</label>
-      <input type="text" id="txtIngresos" />
+      <div class="campos-grupo">
+        <div class="campo">
+          <label for="txtIngresos">Ingresos:</label>
+          <input type="text" id="txtIngresos" inputmode="decimal" />
+        </div>
 
-      <label for="txtEgresos">Egresos:</label>
-      <input type="text" id="txtEgresos" />
+        <div class="campo">
+          <label for="txtEgresos">Egresos:</label>
+          <input type="text" id="txtEgresos" inputmode="decimal" />
+        </div>
+      </div>
 
-      <p>Disponible: <span id="spnDisponible"></span></p>
-      <p>Capacidad de pago mensual: <span id="spnCapacidadPago"></span></p>
+      <p class="resultado">Disponible: <span id="spnDisponible"></span></p>
+      <p class="resultado">Capacidad de pago mensual: <span id="spnCapacidadPago"></span></p>
 
       <h2>Solicitud de crédito</h2>
-      <label for="txtMonto">Monto:</label>
-      <input type="text" id="txtMonto" />
+      <div class="campos-grupo">
+        <div class="campo">
+          <label for="txtMonto">Monto:</label>
+          <input type="text" id="txtMonto" inputmode="decimal" />
+        </div>
 
-      <label for="txtPlazo">Plazo en años:</label>
-      <input type="text" id="txtPlazo" />
+        <div class="campo">
+          <label for="txtPlazo">Plazo en años:</label>
+          <input type="text" id="txtPlazo" inputmode="numeric" />
+        </div>
 
-      <label for="txtTasaInteres">Tasa de interés:</label>
-      <input type="text" id="txtTasaInteres" />
+        <div class="campo">
+          <label for="txtTasaInteres">Tasa de interés:</label>
+          <input type="text" id="txtTasaInteres" inputmode="decimal" />
+        </div>
+      </div>
 
-      <p>Interés a pagar: <span id="spnInteresPagar"></span></p>
-      <p>Total préstamo: <span id="spnTotalPrestamo"></span></p>
-      <p>Cuota mensual: <span id="spnCuotaMensual"></span></p>
-      <p>Estado de crédito: <span id="spnEstadoCredito">ANALIZANDO...</span></p>
+      <p class="resultado">Interés a pagar: <span id="spnInteresPagar"></span></p>
+      <p class="resultado">Total préstamo: <span id="spnTotalPrestamo"></span></p>
+      <p class="resultado">Cuota mensual: <span id="spnCuotaMensual"></span></p>
+      <p class="resultado">Estado de crédito: <span id="spnEstadoCredito">ANALIZANDO...</span></p>
 
       <div class="buttons">
         <button id="btnCalcularCredito" onclick="calcular()">

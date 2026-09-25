@@ -1,0 +1,7 @@
+-----------PRIMER PROMPT--------------
+actua como un diseñador profesional y en los archivos HTML y CSS que te voy a pasar hazle los siguientes arreglos:
+
+Mejora la parte visual haciendo que tome un aspecto empresarial, utiliza los colores del banco pichincha (Ecuador) y el logo que tambien te lo adjunto, recuerda que la pagina debe ser responsive
+------------------------------------------
+-----------SEGUNDO PROMPT-----------------
+quiero que el logo se vea un poquito mas y que los botones tengan una ligera animacion de un brillo leve cuando el cursor pasa por encima 
