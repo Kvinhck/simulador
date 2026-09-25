@@ -15,4 +15,17 @@ function calcular() {
   let valorPago = calcularCapacidadPago(redonF);
   let cmpValor = document.getElementById("spnCapacidadPago");
   cmpValor.textContent = valorPago;
+
+  let cmpMonto=document.getElementById("txtMonto");
+  let cmpPlazo=document.getElementById("txtPlazo");
+  let cmptasa=document.getElementById("txtTasaInteres");
+  let montoStr=cmpMonto.value;
+  let plazoStr=cmpPlazo.value;
+  let tasaStr=cmptasa.value;
+  let montoEn=parseInt(montoStr);
+  let plazoEn=parseInt(plazoStr);
+  let tasaEn=parseInt(tasaStr);
+  let calculoInteres=calcularInteresSimple(montoEn,tasaEn,plazoEn);
+  let cmpInteres=document.getElementById("spnInteresPagar");
+  cmpInteres.textContent=calculoInteres;
 }

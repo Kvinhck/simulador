@@ -10,3 +10,9 @@ function calcularCapacidadPago(montoDisponible) {
   let pro = montoDisponible * 0.5;
   return pro;
 }
+
+function calcularInteresSimple(monto, tasa, plazoAnios) {
+  let calculo = plazoAnios * monto * (tasa / 100);
+  return calculo;
+}
+
