@@ -28,4 +28,8 @@ function calcular() {
   let calculoInteres=calcularInteresSimple(montoEn,tasaEn,plazoEn);
   let cmpInteres=document.getElementById("spnInteresPagar");
   cmpInteres.textContent=calculoInteres;
+
+  let calculoPrestamo=calcularTotalPagar(montoEn,calculoInteres);
+  let cmpPrestamo=document.getElementById("spnTotalPrestamo");
+  cmpPrestamo.textContent=calculoPrestamo;
 }
