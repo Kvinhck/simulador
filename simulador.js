@@ -32,4 +32,11 @@ function calcular() {
   let calculoPrestamo=calcularTotalPagar(montoEn,calculoInteres);
   let cmpPrestamo=document.getElementById("spnTotalPrestamo");
   cmpPrestamo.textContent=calculoPrestamo;
+
+  let calculoCuota=calcularCuotaMensual(calculoPrestamo,plazoEn);
+  let cmpCuota=document.getElementById("spnCuotaMensual");
+  let redonC=calculoCuota.toFixed(2);
+  let redonCe=parseFloat(redonC);
+  cmpCuota.textContent=redonCe;
+  
 }
