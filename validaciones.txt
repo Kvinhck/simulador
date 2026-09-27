@@ -1,0 +1,17 @@
+Primer prompt
+---------------------------------------------------------------------------------------------------------------
+Actua como un desarrollador senior experto, necesito que implementes la lógica de validación para mi simulador siguiendo estas instrucciones
+específicas:
+REGLAS DE VALIDACIÓN:
+   - Determina y define un conjunto completo de reglas de validación para los campos del formulario.
+   - Incluye:
+     -Tipos de datos válidos (numérico)
+     - Montos/valores máximos y mínimos permitidos
+     - Campos requeridos/obligatorios
+     - Cualquier otra regla lógica necesaria para un simulador de este tipo
+EJECUCIÓN:
+   - Las validaciones no deben ejecutarse en tiempo real al escribir, sino unicamente cuando el usuario presione el botón "Calcular Simulador"
+   - Si existen errores, los mensajes deben aparecer dinámicamente justo debajo de cada campo validado que contenga un error (en color rojo y con negrita)
+   - Si no hay errores, debe proceder con el cálculo del simulador
+
+----------------------------------------------------------------------------------------------------------------

@@ -1,5 +1,63 @@
 //AQUI EL JAVASCRIPT PARA MANIPULAR EL HTML
+
+function validarCampoNumerico(idInput, idError, valorMin, valorMax, soloEntero) {
+  let valorStr = document.getElementById(idInput).value.trim();
+  let elementoError = document.getElementById(idError);
+  let mensaje = "";
+
+  if (valorStr.length === 0) {
+    mensaje = "Este campo es obligatorio";
+  } else if (isNaN(valorStr)) {
+    mensaje = "Solo se permiten valores numéricos";
+  } else if (soloEntero && valorStr.indexOf(".") !== -1) {
+    mensaje = "Este campo debe ser un número entero";
+  } else {
+    let valorNum = parseFloat(valorStr);
+    if (valorNum < valorMin) {
+      mensaje = "El valor mínimo permitido es " + valorMin;
+    } else if (valorNum > valorMax) {
+      mensaje = "El valor máximo permitido es " + valorMax;
+    }
+  }
+
+  elementoError.textContent = mensaje;
+  return mensaje === "";
+}
+
+function validarFormulario() {
+  let ingresosValido = validarCampoNumerico("txtIngresos", "errIngresos", 0.01, 999999, false);
+  let egresosValido = validarCampoNumerico("txtEgresos", "errEgresos", 0, 999999, false);
+  let montoValido = validarCampoNumerico("txtMonto", "errMonto", 100, 50000, false);
+  let plazoValido = validarCampoNumerico("txtPlazo", "errPlazo", 1, 30, true);
+  let tasaValido = validarCampoNumerico("txtTasaInteres", "errTasaInteres", 0.1, 50, false);
+
+  let formularioValido = ingresosValido && egresosValido && montoValido && plazoValido && tasaValido;
+
+  if (ingresosValido && egresosValido) {
+    let ingresosNum = parseFloat(document.getElementById("txtIngresos").value);
+    let egresosNum = parseFloat(document.getElementById("txtEgresos").value);
+    if (egresosNum > ingresosNum) {
+      document.getElementById("errEgresos").textContent = "Los egresos no pueden superar los ingresos";
+      formularioValido = false;
+    }
+  }
+
+  return formularioValido;
+}
+
+function limpiarErrores() {
+  document.getElementById("errIngresos").textContent = "";
+  document.getElementById("errEgresos").textContent = "";
+  document.getElementById("errMonto").textContent = "";
+  document.getElementById("errPlazo").textContent = "";
+  document.getElementById("errTasaInteres").textContent = "";
+}
+
 function calcular() {
+  if (!validarFormulario()) {
+    return;
+  }
+
   let cmpIngre = document.getElementById("txtIngresos");
   let cmpEgre = document.getElementById("txtEgresos");
   let egreStr = cmpEgre.value;
@@ -74,4 +132,6 @@ function reinicio() {
   cmpPrestamo.textContent = "";
   cmpCuota.textContent = "";
   cmpEstado.textContent = "ANALIZANDO...";
+
+  limpiarErrores();
 }
